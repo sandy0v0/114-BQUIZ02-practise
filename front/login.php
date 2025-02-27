@@ -2,11 +2,11 @@
     <legend>會員登入</legend>
     <table>
         <tr>
-            <td class="clo" style="text-align-last: right; width: 150px;">帳號</td>
+            <td class="clo" style="text-align-last: right; width: 150px;">帳號:</td>
             <td><input type="text" name="acc" id="acc"></td>
         </tr>
         <tr>
-            <td class="clo" style="text-align-last: right; width: 150px;">密碼</td>
+            <td class="clo" style="text-align-last: right; width: 150px;">密碼:</td>
             <td><input type="password" name="pw" id="pw"></td>
         </tr>
         <tr>
