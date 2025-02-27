@@ -3,7 +3,7 @@
 session_start();
 
 class DB{
-    protected $dsn="mysql:host=localhost;charset=utf8;dbname=de14-2";
+    protected $dsn="mysql:host=localhost;charset=utf8;dbname=db14-2-p1";
     protected $pdo;
     protected $table;
     public static $type=[
@@ -33,10 +33,10 @@ class DB{
        }
 
        if(!empty($arg[1])){
-        $sql .=$sql . $arg[1];
+            $sql=$sql . $arg[1];
        }
 
-       return $this->fetchALL($sql);
+       return $this->fetchAll($sql);
     }
 
 
@@ -102,8 +102,8 @@ class DB{
     function avg($col,$where=[]){
         return $this->math('avg',$col,$where);
     }
-    function count($col,$where=[]){
-        return $this->math('count',$col,$where);
+    function count($where=[]){
+        return $this->math('count','*',$where);
     }
 
 
@@ -123,13 +123,13 @@ class DB{
             $sql=$sql . " WHERE " . join(" && ",$tmp);
         }
 
-        return $this ->pdo->query($sql)->fetchColumn();
+        return $this->pdo->query($sql)->fetchColumn();
 
     }
 }
 
 function q ($sql){
-    $pdo=new PDO ("mysql:host=localhost;charset=utf8;dbname=de14-2",'root','');
+    $pdo=new PDO ("mysql:host=localhost;charset=utf8;dbname=db14-2-p1",'root','');
         return $pdo->query($sql)->fetchAll();
     }
 
