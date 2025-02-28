@@ -21,7 +21,7 @@
             <td class="row-title"><?=$row['title'];?></td>
             <td>
                 <span class='title'><?=mb_substr($row['news'],0,25);?>...</span>
-                <span class='detail'><?=nl2br($row['news']);?></span>
+                
             </td>
             <td></td>
         </tr>
@@ -42,25 +42,3 @@
 ?>
     </div>
 </fieldset>
-<script>
-    $(".like").on("click",function(){
-        let id=$(this).data('id');
-        let like=$(this).text();
-
-        $.post("./api/like.php",{id},()=>{
-
-            switch(like){
-                case "讚":
-                    $(this).text("收回讚");
-                break;
-                case "收回讚":
-                    $(this).text("讚");
-                break;
-            }
-        })
-    })    
-    
-$(".row-title").on("click",function(){
-    $(this).next().children(".title,.detail").toggle();
-})
-</script>
