@@ -33,7 +33,7 @@
 
 		</div>
 		<div id="mm">
-			<div class="hal" id="lef">
+			<div class="hal ct" id="lef">
 				<a class="blo" href="?do=acc">帳號管理</a>
 				<!-- <a class="blo" href="?do=po">分類網誌</a> -->
 				<a class="blo" href="?do=news">最新文章管理</a>
