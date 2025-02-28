@@ -1,6 +1,9 @@
 <fieldset style='width:85%;margin:auto'>
     <legend>最新文章管理</legend>
     <!-- table.ct>(tr>th*4)+(tr>td*4) -->
+
+    <button onclick="location.href='?do=add_news'">新增文章</button>
+
     <table class="ct" style="width:100%">
         <tr>
             <th>編號</th>
@@ -19,7 +22,7 @@
         foreach($rows as $idx=> $row):
     ?>
         <tr>
-            <td><?=$start+$idx+1;?></td>
+            <td class="clo"><?=$start+$idx+1;?></td>
             <td><?=$row['title'];?></td>
             <td>
                 <input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?"checked":"";?>>
@@ -43,12 +46,9 @@
                 echo "<a href='?do=news&p=$i' style='font-size:$size'> $i </a>";
             }
 
-
-
             if(($now+1)<=$pages){
                 echo "<a href='?do=news&p=".($now+1)."'> &gt;</a>";
             }
-
 
 ?>
     </div>
@@ -76,6 +76,5 @@ function edit(){
   })
                  
 }
-
 
 </script>
