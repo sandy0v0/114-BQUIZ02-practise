@@ -28,7 +28,8 @@
 		</div>
 		<div id="title2">
 			<a href="index.php" title="健康促進網-回首頁">
-				<img src="icon/02B01.jpg" alt="健康促進網-回首頁">
+				<!-- <img src="icon/02B01.jpg" alt="健康促進網-回首頁"> -->
+				<img src="icon/14.png" alt="健康促進網-回首頁" style="width: 100%;">
 			</a>
 
 		</div>
