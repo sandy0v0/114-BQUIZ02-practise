@@ -9,7 +9,7 @@
 
     <table style="width: 100%;">
         <tr>
-            <th width="20%">標題</th>
+            <th width="30%">標題</th>
             <th width="60%">內容</th>
             <th></th>
         </tr>
@@ -24,7 +24,7 @@
         foreach($rows as $row):
         ?>
         <tr>
-            <td class="row-title"><?=$row['title'];?></td>
+            <td class="row-title clo"><?=$row['title'];?></td>
             <td>
                 <span class='title'><?=mb_substr($row['news'],0,25);?>...</span>
                 <span class='detail'><?=nl2br($row['news']);?></span>
