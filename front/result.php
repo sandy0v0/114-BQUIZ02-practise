@@ -41,11 +41,9 @@ foreach($options as $option){
     echo "<div>{$option['vote']}票($rateStr%)</div>";
     echo "</div>";
 }
-?>
+?>  
+</fieldset>
+
 <div class="ct">
     <button onclick="location.href='?do=que'">返回</button>
 </div>
-
-    
-
-</fieldset>

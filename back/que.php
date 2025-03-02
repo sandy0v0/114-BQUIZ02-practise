@@ -42,3 +42,41 @@
     }
 
 </script>
+
+<br>
+
+
+<fieldset style="width:70%;margin:auto">
+    <legend>問卷列表</legend>
+    <table style="width:100%">
+        <tr class='ct'>
+            <td class='clo'>問卷名稱</td>
+            <td class='clo'>投票數</td>
+            <td class='clo'>開放</td>
+        </tr>
+        <?php 
+        // 只取得 main_id = 0 的問卷
+        $questions = $Que->all(['main_id' => 0]);  // 加入條件 main_id = 0
+        foreach ($questions as $row):
+        ?>
+        <tr>
+            <td width="70%"><?=$row['text'];?></td>
+            <td width="15%" class="ct"><?=$row['vote'];?></td>
+            <td width="15%" class="ct">
+                <button class="show" data-id="<?=$row['id'];?>"><?=($row['sh'] == 1) ? '開放' : '關閉';?></button>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+</fieldset>
+
+
+<script>
+    $(".show").on("click", function(){
+        let id = $(this).data('id'); // 取得按鈕上的問卷 ID
+        $.post("./api/show.php", {id}, function(){
+            location.reload();  // 當按鈕被點擊後，重新載入頁面以反映狀態變更
+        });
+    });
+</script>
+    
